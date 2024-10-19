@@ -21,9 +21,14 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Setup Instructions
 
 1. **Clone the repository:**
-```bash
-git clone https://github.com/yourusername/task-management-app.git
-```
+  ```bash
+  git clone https://github.com/yourusername/task-management-app.git
+  ```
+2. **Navigate to the project directory:**
+   ```bash
+   cd task-management-app
+  ```
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
