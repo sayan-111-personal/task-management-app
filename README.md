@@ -18,18 +18,11 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - **React Icons** for icons (edit, delete, etc.).
 - **LocalStorage** for persisting tasks across sessions.
 
-## Getting Started
+## Setup Instructions
 
-First, run the development server:
-
+1. **Clone the repository:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/task-management-app.git
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
