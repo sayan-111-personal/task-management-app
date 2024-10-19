@@ -18,6 +18,30 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - **React Icons** for icons (edit, delete, etc.).
 - **LocalStorage** for persisting tasks across sessions.
 
+## Approach to Sorting Tasks by Priority
+1. **Completion Status:** The sorting function first checks whether the tasks are completed. Incomplete tasks are prioritized, meaning they appear at the top, while completed tasks are pushed to the bottom.
+2. **Priority Sorting:** If both tasks being compared have the same completion status, the tasks are sorted based on their priority levels. The priorityOrder object assigns numeric values to priority levels, where high is the most important, followed by medium, and then low.
+3. **Effect Hook:** The useEffect hook ensures that this sorting logic is applied every time there is a change in the taskList. Additionally, tasks are saved to localStorage after every update, ensuring persistence across sessions.
+
+   ```typescript
+   useEffect(() => {
+     const sortedTasks = [...taskList].sort((a, b) => {
+       if (a.completed !== b.completed) {
+         // Incomplete tasks are shown first
+         return a.completed ? 1 : -1;
+       }
+   
+       // Sort by priority if both tasks are incomplete or completed
+       const priorityOrder = { high: 1, medium: 2, low: 3 };
+       return priorityOrder[a.priority] - priorityOrder[b.priority];
+     });
+     setSortedTaskList(sortedTasks);
+   
+     // Save sorted tasks to localStorage
+     localStorage.setItem('tasks', JSON.stringify(taskList));
+   }, [taskList]);
+   ```
+
 ## Setup Instructions
 
 1. **Clone the repository:**
